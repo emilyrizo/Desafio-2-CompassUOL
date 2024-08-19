@@ -50,10 +50,6 @@ footer {
   color: #000;
 }
 
-.footer-ul > ul {
-  height: 17.7rem;
-}
-
 .inner-ul {
   margin-top: 2.6rem;
   display: flex;
@@ -92,8 +88,12 @@ footer {
   grid-row: 1 / 2;
 }
 
-.footer-divider {
-  margin-bottom: 2rem;
+.divider-footer {
+  display: flex;
+  border: solid hsla(0, 0%, 0%, 0.1);
+  width: 124rem;
+  border-width: 0.05rem;
+  margin-bottom: 2.5rem;
 }
 
 .footer-copyright {
@@ -117,39 +117,97 @@ footer {
 
 @media (max-width: 390px) {
   footer {
-    padding: 0 2rem;
+    overflow: hidden;
+    margin-top: -15.5rem;
+    height: 84.6rem;
+    width: 39rem;
+    padding: 18.96rem 1.6rem 0;
   }
 
   .footer-container {
-    grid-template-columns: 1fr;
+    margin: 0;
+    width: 35.9rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 13rem 1fr 1fr;
+    gap: 2.4rem;
   }
-
-  .footer-content,
-  .company-footer,
-  .help-footer,
-  .faq-footer,
-  .resources-footer {
-    grid-column: span 1;
-    text-align: center;
-  }
-
+  
   .logo-footer {
-    font-size: 2rem;
-    line-height: 2.5rem;
+    font-family: "Integral-CF";
+    color: #000;
+    font-size: 2.885rem;
+    line-height: 3.462rem;
+    margin-top: -1rem;
   }
-
+  
   .subtitle-footer {
-    font-size: 1rem;
-    line-height: 1.5rem;
+    margin-top: 1.4rem;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    color: hwb(0 0% 100% / 0.6);
   }
 
+  .footer-section h3 {
+    font-size: 1.4rem;
+    letter-spacing: 0.3rem;
+  }
+  
+  .inner-ul {
+    margin-top: 1.6rem;
+    gap: 1.6rem;
+  }
+  
+  .inner-ul li {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+  }
+
+  .footer-content {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+  
+  .company-footer {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+  
+  .help-footer {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+  
+  .faq-footer {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+  
+  .resources-footer {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+  }
+
+  .divider-footer {
+    width: 35.8rem;
+    margin: 4rem 0 1.6rem;
+  }
+
+  .footer-copyright {
+    text-align: center;
+    margin: 0 0 1.3rem;
+    width: 35.8rem;
+  }
+  
   .payments {
     justify-content: center;
-    margin-top: 2rem;
+  }
+  
+  .payments img {
+    margin: 0rem;
+    margin-left: -0.5rem;
+    width: 5.9rem;
+    height: auto;
   }
 
-  .payments img {
-    width: 4rem;
-    height: 3rem;
-  }
 }

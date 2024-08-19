@@ -103,8 +103,12 @@
     top: 4rem;
     left: 1.6rem;
     bottom: 2rem;
-    width: 100%; 
+    width: 35.8rem; 
     z-index: 1; 
+  }
+
+  .title {
+    width: 35.8rem;
   }
 
   .title-content {
@@ -192,7 +196,7 @@
 
   .banner-img img {
     display: flex;
-    width: 39rem;
+    width: 100%;
     justify-content: center;
     padding-top: 42rem;
   }

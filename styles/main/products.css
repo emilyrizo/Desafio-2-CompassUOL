@@ -141,12 +141,15 @@
   }
 
   .arrivals-products, .top-selling-products {
-    margin-left: 49rem;
+    max-width: 39rem;
+    margin-left: 3rem;
     margin-top: 3.2rem;
     flex-wrap: nowrap;
+    overflow: hidden;
   }
 
   .product-list {
+    width: 39rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.6rem; 
@@ -154,6 +157,7 @@
 
   .product-image {
     width: 20rem;
+    overflow: hidden;
   }
 
   .product-name {
