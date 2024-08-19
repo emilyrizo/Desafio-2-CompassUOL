@@ -1,0 +1,80 @@
+#brand-container {
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  height: 12.2rem;
+  align-items: center;
+  gap: 10.6rem;
+}
+
+.versace-logo {
+  height: 3.316rem;
+}
+
+.zara-logo {
+  height: 3.8rem;
+}
+
+.gucci-logo {
+  height: 3.6rem;
+}
+
+.prada-logo {
+  height: 3.2rem;
+}
+
+.calvinklein-logo {
+  height: 3.335rem;
+}
+
+
+
+@media (max-width: 390px) {
+  #brand-container {
+    display: grid;
+    grid-template-columns: 11.674rem 6.381rem 10.939rem; 
+    grid-template-rows: 2.665rem 2.2rem; 
+    height: 14.6rem;
+    justify-items: center;
+    column-gap: 3.2rem;
+    row-gap: 2rem; 
+    padding-top: 3.9rem;
+  }
+
+  .versace-logo {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2; 
+    max-width: 100%;
+    height: auto;
+  }
+
+  .zara-logo {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2; 
+    max-width: 100%;
+    height: auto;
+  }
+
+  .gucci-logo {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2; 
+    max-width: 100%;
+    height: auto;
+  }
+
+  .prada-logo {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3; 
+    text-align: center;
+    max-width: 12.7rem;
+    height: auto;
+  }
+
+  .calvinklein-logo {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3; 
+    text-align: center;
+    max-width: 13.48rem;
+    height: auto;
+  }
+}

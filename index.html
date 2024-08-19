@@ -6,8 +6,11 @@
   <link rel="stylesheet" href="./styles/style.css">
   <title>SHOP.CO</title>
 </head>
+
 <body id="body-container">
+
   <header>
+
     <section id="topbar-container">
       <div class="tb-content">
         <p>Sign up and get 20% off to your first order. <u>Sign Up Now</u></p>
@@ -23,23 +26,39 @@
     <section id="menu-container">
       <div class="menu-content">
         <nav class="nav-content">
+          <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
           <p class="logo">SHOP.CO</p>
+
           <ul class="menu-list">
-            <li>Shop<img class="arrow-shop" src="./assets/images/header/arrow.svg" alt="seta para baixo"></li>
-            <li>On Sale</li>
-            <li>New Arrivals</li>
-            <li>Brands</li>
+            <li class="nav-item li-shop">
+              <a class="a-shop nav-link" href="#">Shop<img class="arrow-shop" src="./assets/images/header/arrow.svg" alt="seta para baixo"><img class="arrow-shop-white" src="./assets/images/header/arrow-white2.png" alt="seta para baixo"></a>
+              <ul class="shop-submenu">
+                <li><a class="submenu-first" href="#">Casual</a></li>
+                <li><a href="#">Formal</a></li>
+                <li><a href="#">Party</a></li>
+                <li><a href="#">Gym</a></li>
+              </ul>
+            </li>
+            <li class="nav-item li-sale"><a href="#" class="nav-link">On Sale</a></li>
+            <li class="nav-item li-news"><a href="#" class="nav-link">New Arrivals</a></li>
+            <li class="nav-item li-brands"><a href="#" class="nav-link">Brands</a></li>
           </ul>
 
           <div class="search">
-            <img class="img-search" src="./assets/images/header/search.svg" alt="">
+            <a class="search-btn"><img class="img-search" src="./assets/images/header/search.svg" alt=""></a>
             <input class="input-search" type="text" placeholder="Search for products...">
           </div>
 
           <div class="cart-login">
+            <img class="search-icon" src="./assets/images/header/search2.svg" alt="">
             <img class="cart-icon" src="./assets/images/header/cart.svg" alt="">
             <img class="login-icon" src="./assets/images/header/login.svg" alt="">
           </div>
+
         </nav>
       </div>
     </section>
@@ -52,7 +71,7 @@
         </div>
 
         <div class="subtitle">
-          <p class="subtitle-content">Browse through our diverse range of meticulously crafted garments, designed<br/>to bring out your individuality and cater to your sense of style.</p>
+          <p class="subtitle-content">Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</p>
         </div>
 
         <div class="button-banner">
@@ -63,23 +82,16 @@
           <ul class="banner-list-content">
             <li class="brands-li">200+<p class="brands-content">International Brands</p></li><img class="bar-list" src="./assets/images/header/line.svg" alt="">
             
-            <li class="products-li">2,000+<p class="products-content">High-Quality Products</p></li><img class="bar-list" src="./assets/images/header/line.svg" alt="">
+            <li class="products-li">2,000+<p class="products-content">High-Quality Products</p></li><img class="bar-list bar-list-2" src="./assets/images/header/line.svg" alt="">
 
             <li class="customers-li">30,000+<p class="customers-content">Happy Customers</p></li>
           </ul>
         </div>
-
-        <div class="stars">
-          <img class="star star1" src="./assets/images/header/star1.png" alt="">
-          <img class="star star2" src="./assets/images/header/star2.png" alt="">
-        </div>
-
       </div>
+      <span class="banner-img"><img src="./assets/images/header/banner2.png" alt=""></span>
     </section>
-  </header>
 
-  <main id="main-container">
-    <section id="brand-bar">
+    <section id="brand-container">
       <img class="versace-logo" src="./assets/images/brands/Versace.svg" alt="">
 
       <img class="zara-logo" src="./assets/images/brands/Zara.svg" alt="">
@@ -90,6 +102,10 @@
 
       <img class="calvinklein-logo" src="./assets/images/brands/CalvinKlein.svg" alt="">
     </section>
+
+  </header>
+
+  <main id="main-container">
 
     <section id="new-arrivals-container">
       <h2 class="new-arrivails-title">NEW ARRIVALS</h2>
@@ -163,7 +179,8 @@
         <button class="view-all" >View All</button>
       </div>
 
-      <img class="divider" src="./assets/images/products/divider.svg" alt="">
+      <span class="divider"></span>
+
     </section>
 
     <section id="top-selling-container">
@@ -256,23 +273,56 @@
           <img src="./assets/images/niche/gym.svg" alt="Image 4">
         </div>
       </div>
+
+      <div class="niche-images-mobile">
+        <div class="casual-mob">
+          <img src="./assets/images/niche/casual-mob.svg" alt="Image 1">
+        </div>
+        <div class="formal-mob">
+          <img src="./assets/images/niche/formal-mob.svg" alt="Image 2">
+        </div>
+        <div class="party-mob">
+          <img src="./assets/images/niche/party-mob.svg" alt="Image 3">
+        </div>
+        <div class="gym-mob">
+          <img src="./assets/images/niche/gym-mob.svg" alt="Image 4">
+        </div>
+      </div>
     </section>
 
     <section id="carousel-container">
       <h2 class="carousel-title">OUR HAPPY CUSTOMERS</h2>
+
       <button class="carousel-btn prev-btn">
-          <img src="./assets/images/rating/left.svg" alt="Previous">
+        <img src="./assets/images/rating/left.svg" alt="Previous">
       </button>
       <button class="carousel-btn next-btn">
-          <img src="./assets/images/rating/right.svg" alt="Next">
+        <img src="./assets/images/rating/right.svg" alt="Next">
       </button>
+      
       <div class="carousel">
-          <div class="carousel-track"></div>
+        <div class="carousel-track">
+          <div class="carousel-item">
+            <img src="./assets/images/rating/rating5.svg" alt="Image 1">
+          </div>
+          <div class="carousel-item">
+            <img src="./assets/images/rating/rating1.svg" alt="Image 2">
+          </div>
+          <div class="carousel-item">
+            <img src="./assets/images/rating/rating2.svg" alt="Image 3">
+          </div>
+          <div class="carousel-item">
+            <img src="./assets/images/rating/rating3.svg" alt="Image 4">
+          </div>
+          <div class="carousel-item">
+            <img src="./assets/images/rating/rating4.svg" alt="Image 5">
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="newsletter-container">
-      <h2 class="newsletter-title">STAY UPTO DATE ABOUT<br />OUR LATEST OFFERS</h2>
+      <h2 class="newsletter-title">STAY UPTO DATE ABOUT OUR LATEST OFFERS</h2>
 
       <div class="newsletter-input-content">
         <div class="newsletter-input">

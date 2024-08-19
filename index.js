@@ -5,6 +5,45 @@ function closeTopBar() {
   document.querySelector('header').classList.add('no-topbar');
 }
 
+
+const shopMenuItem = document.querySelector('.li-shop > a');
+const submenu = document.querySelector('.shop-submenu');
+
+
+function toggleSubmenu(event) {
+  event.preventDefault();
+  
+  const parentLi = this.parentNode;
+
+  if (parentLi.classList.contains('menu-open')) {
+    parentLi.classList.remove('menu-open');
+    submenu.style.display = 'none';
+  } else {
+    document.querySelectorAll('.menu-open').forEach(function(item) {
+      item.classList.remove('menu-open');
+      item.querySelector('.shop-submenu').style.display = 'none';
+    });
+
+    parentLi.classList.add('menu-open');
+    submenu.style.display = 'block';
+  }
+}
+
+const hamburger = document.querySelector('.hamburger');
+const menuList = document.querySelector('.menu-list');
+
+hamburger.addEventListener('click', function() {
+  menuList.classList.toggle('active');
+  hamburger.classList.toggle('active');
+});
+
+document.querySelectorAll('.nav-link').forEach(n => n. addEventListener('click', () => {
+    menuList.classList.remove('active');
+    hamburger.classList.remove('active');
+
+}));
+
+
 document.addEventListener("DOMContentLoaded", function() {
   const ratingElements = document.querySelectorAll('.rating-stars');
 
@@ -32,40 +71,48 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-const carousel = document.querySelector('.carousel');
+
 const carouselTrack = document.querySelector('.carousel-track');
-const prevBtn = document.querySelector('.next-btn'); 
-const nextBtn = document.querySelector('.prev-btn');
-const carouselItems = document.querySelectorAll('.carousel-item');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+const carouselItems = Array.from(document.querySelectorAll('.carousel-item'));
 
 let currentIndex = 0;
 const itemWidth = carouselItems[0].clientWidth;
 
 const updateCarousel = () => {
+  carouselTrack.style.transition = 'transform 0.5s ease';
   carouselTrack.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+};
 
-  carouselItems.forEach(item => {
-    item.style.filter = 'none';
-  });
-  carouselItems[currentIndex].style.filter = 'blur(2px)';
-  if (currentIndex === 0) {
-    carouselItems[carouselItems.length - 1].style.filter = 'blur(2px)';
-  } else if (currentIndex === carouselItems.length - 1) {
-    carouselItems[0].style.filter = 'none';
-  }
+const shiftFirstToLast = () => {
+  carouselTrack.style.transition = 'none';
+  carouselTrack.appendChild(carouselTrack.firstElementChild);
+  currentIndex--;
+  carouselTrack.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+};
+
+const shiftLastToFirst = () => {
+  carouselTrack.style.transition = 'none';
+  carouselTrack.insertBefore(carouselTrack.lastElementChild, carouselTrack.firstElementChild);
+  currentIndex++;
+  carouselTrack.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
 };
 
 prevBtn.addEventListener('click', () => {
+  if (currentIndex === 0) {
+    shiftLastToFirst();
+  }
   currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
   updateCarousel();
 });
 
 nextBtn.addEventListener('click', () => {
+  if (currentIndex === carouselItems.length - 1) {
+    shiftFirstToLast();
+  }
   currentIndex = (currentIndex + 1) % carouselItems.length;
-  updateCarousel();   
-
+  updateCarousel();
 });
 
 updateCarousel();
-
-

@@ -1,0 +1,155 @@
+
+footer {
+  display: flex;
+  background-color: #F0F0F0;
+  height: 50rem;
+  margin-top: -9rem;
+  padding: 0 10rem 0rem 10rem;
+}
+
+.footer-container {
+  display: grid;
+  margin: 14rem 0 5rem 0;
+  grid-template-columns: 25rem 10.5rem 14rem 15rem 15rem;
+  grid-template-rows: 17.7rem;
+  gap: 11.35rem;
+  justify-content: center;
+  align-items: start;
+}
+
+.logo-footer {
+  font-family: "Integral-CF";
+  color: #000;
+  font-size: 3.345rem;
+  line-height: 4.015rem;
+  margin-top: -1rem;
+}
+
+.subtitle-footer {
+  margin-top: 2rem;
+  margin-bottom: 3.3rem;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  color: hwb(0 0% 100% / 0.6);
+}
+
+.social-media-icons {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.twitter, .facebook, .instagram, .github, .footer-section li {
+  cursor: pointer;
+}
+
+.footer-section h3 {
+  font-family: "Satoshi-Medium";
+  font-size: 1.6rem;
+  letter-spacing: 0.3rem;
+  line-height: 1.8rem;
+  color: #000;
+}
+
+.footer-ul > ul {
+  height: 17.7rem;
+}
+
+.inner-ul {
+  margin-top: 2.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.inner-ul li {
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  color: hsla(0, 0%, 0%, 0.6);
+}
+
+.footer-content {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.company-footer {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.help-footer {
+  grid-column: 3/ 4;
+  grid-row: 1 / 2;
+}
+
+.faq-footer {
+  grid-column: 4 / 5;
+  grid-row: 1 / 2;
+}
+
+.resources-footer {
+  grid-column: 5 / 6;
+  grid-row: 1 / 2;
+}
+
+.footer-divider {
+  margin-bottom: 2rem;
+}
+
+.footer-copyright {
+  margin-top: 0.2rem;
+  font-size: 1.4rem;
+  color: hsla(0, 0%, 0%, 0.6);
+  width: 28rem;
+}
+
+.payments {
+  display: flex;
+  justify-content: end;
+}
+
+.payments img {
+  margin-top: -2.7rem;
+  width: 6.6rem;
+  height: 4.9rem;
+}
+
+
+@media (max-width: 390px) {
+  footer {
+    padding: 0 2rem;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-content,
+  .company-footer,
+  .help-footer,
+  .faq-footer,
+  .resources-footer {
+    grid-column: span 1;
+    text-align: center;
+  }
+
+  .logo-footer {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  .subtitle-footer {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .payments {
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .payments img {
+    width: 4rem;
+    height: 3rem;
+  }
+}

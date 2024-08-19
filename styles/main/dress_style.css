@@ -1,0 +1,89 @@
+#niche-container {
+  background-color: #F0F0F0;
+  position: relative;
+  text-align: center;
+  border-radius: 4rem;
+  padding: 6.8rem 6.4rem 7.6rem 6.4rem;
+  width: 100%;
+  max-width: 123.9rem;
+  height: auto;
+  margin: 8rem auto;
+  box-sizing: border-box; 
+}
+
+.niche-title {
+  width: 100%;
+  font-family: "Integral-CF";
+  font-size: 4.8rem;
+  margin-bottom: 6.4rem;
+  text-align: center;
+}
+
+.niche-images {
+  display: grid;
+  grid-template-columns: 40.7rem 25.7rem 40.7rem;
+  grid-template-rows: 28.9rem 28.9rem;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+} 
+
+.niche-images-mobile {
+  display: none;
+}
+
+.image-small-top {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  cursor: pointer;
+}
+
+.image-large-top {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  cursor: pointer;
+}
+
+.image-large-bottom {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  cursor: pointer;
+}
+
+.image-small-bottom {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  cursor: pointer;
+} 
+
+
+
+@media (max-width: 390px) {
+  #niche-container {
+    background-color: #F0F0F0;
+    border-radius: 2rem;
+    padding: 4rem 2.4rem;
+    width: 35.8rem;
+    height: 98rem;
+    margin: 6rem auto;
+  }
+
+  .niche-title {
+    width: 100%;
+    font-family: "Integral-CF";
+    font-size: 3.2rem;
+    margin-bottom: 2.8rem;
+    text-align: center;
+  }
+
+  .niche-images {
+    display: none;
+  }
+
+  .niche-images-mobile {
+    display: grid;
+    grid-template-columns: 31rem;
+    grid-template-rows: repeat(4, 19rem);
+    gap: 1.6rem;
+  }
+}

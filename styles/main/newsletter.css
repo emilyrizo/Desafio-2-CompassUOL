@@ -1,0 +1,127 @@
+#newsletter-container {
+  background-color: #000;
+  display: flex;
+  position: relative;
+  border-radius: 2rem;
+  padding: 4.3rem 6.4rem;
+  width: 124rem;
+  height: 18rem;
+  margin: 8rem auto 0 auto;
+}
+
+.newsletter-title {
+  width: 55.1rem;
+  font-family: "Integral-CF";
+  color: #fff;
+  font-size: 4rem;
+  line-height: 4.5rem;
+  margin-top: -0.2rem;
+  margin-bottom: 6.4rem;
+}
+
+.newsletter-input-content {
+  padding-left: 21.2rem;
+}
+
+.newsletter-input {
+  display: flex;
+  align-items: center;
+  background-color: #FFF;
+  border-radius: 6.2rem;
+  width: 34.9rem;
+  height: 4.8rem;
+  margin-top: -0.7rem;
+  margin-bottom: 1.4rem;
+}
+
+.email-img {
+  text-align: center;
+  width: auto;
+  height: 1.575rem;
+  margin-right: 1.4rem;
+  margin-left: 1.8rem;
+  cursor: pointer;
+}
+
+.email-input {
+  width: 80%;
+  border-style: none;
+  font-size: 1.6rem;
+  background-color: #FFF;
+}
+
+.email-input:focus {
+  outline: none;
+}
+
+.email-input::placeholder {
+  color: hsla(0, 0%, 0%, 0.4);
+}
+
+.subscribe-btn {
+  font-family: "Satoshi-Medium";
+  font-size: 1.6rem;
+  align-items: center;
+  background-color: #FFF;
+  border-style: none;
+  border-radius: 6.2rem;
+  width: 34.9rem;
+  height: 4.8rem;
+  cursor: pointer;
+}
+
+
+@media (max-width: 390px) {
+  #newsletter-container {
+    flex-direction: column;
+    padding: 3.2rem 2.4rem;
+    width: 35.8rem;
+    height: 29.3rem;
+    margin: 4.981rem auto 0 auto;
+  }
+
+  .newsletter-title {
+    font-size: 3.2rem;
+    line-height: 3.5rem;
+    margin-bottom: 3rem;
+    width: 29.7rem;
+    height: 10.5rem;
+  }
+  
+  .newsletter-input-content {
+    padding-left: 0;
+  }
+  
+  .newsletter-input {
+    width: 31.1rem;
+    height: 4.2rem;
+    margin-top: 0;
+    margin-bottom: 1.4rem;
+  }
+  
+  .email-img {
+    width: 1.88rem;
+    height: 1.312rem;
+    margin-right: 1.4rem;
+    margin-left: 1.8rem;
+  }
+  
+  .email-input {
+    width: 78%;
+    font-size: 1.4rem;
+  }
+  
+  .email-input:focus {
+    outline: none;
+  }
+  
+  .email-input::placeholder {
+    color: hsla(0, 0%, 0%, 0.4);
+  }
+
+  .subscribe-btn {
+    font-size: 1.4rem;
+    width: 31.1rem;
+    height: 4.2rem;
+  }
+}
