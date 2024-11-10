@@ -1,0 +1,62 @@
+#topbar-container {
+  line-height: 1.89rem;
+  width: 100%;
+  margin: 0;
+  height: 3.8rem;
+  display: table;
+  font-size: 1.4rem;
+  color: #fff;
+  position: relative;
+}
+
+.tb-content {
+  background-color: #000;
+  text-align: center;
+  text-align: center;
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.tb-content p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.tb-content u {
+  font-family: "Satoshi-Medium";
+  cursor: pointer;
+}
+
+.tb-close .icon-close {
+  top: 0.9rem;
+  right: 10.5rem;
+  height: 1.3rem;
+  width: 1.3rem;
+  color: #fff;
+  cursor: pointer;
+  position: absolute;
+  text-align: center;
+  z-index: 1000;
+}
+
+.no-topbar #topbar-container {
+  visibility: hidden;
+  margin-top: -2rem;
+  height: 0;
+  padding: 0;
+}
+
+@media (max-width: 390px) {
+  #topbar-container {
+    height: 3.4rem;
+  }
+
+  .tb-content p {
+    font-size: 1.2rem;
+  }
+  
+  .tb-close .icon-close {
+    display: none;
+  }
+}

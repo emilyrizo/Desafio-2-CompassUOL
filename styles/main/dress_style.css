@@ -28,6 +28,16 @@
   align-items: center;
 } 
 
+.niche-images img {
+  transition: transform 0.3s ease, box-shadow 0.3s;
+  border-radius: 2rem;
+}
+
+.niche-images img:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
 .niche-images-mobile {
   display: none;
 }

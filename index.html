@@ -35,18 +35,21 @@
 
           <ul class="menu-list">
             <li class="nav-item li-shop">
-              <a class="a-shop nav-link" href="#">Shop<img class="arrow-shop" src="./assets/images/header/arrow.svg" alt="seta para baixo"><img class="arrow-shop-white" src="./assets/images/header/arrow-white2.png" alt="seta para baixo"></a>
-              <ul class="shop-submenu">
-                <li><a class="submenu-first" href="#">Casual</a></li>
-                <li><a href="#">Formal</a></li>
-                <li><a href="#">Party</a></li>
-                <li><a href="#">Gym</a></li>
-              </ul>
+                <a class="a-shop nav-link" href="#" id="shop-link">Shop
+                    <img class="arrow-shop" src="./assets/images/header/arrow.svg" alt="seta para baixo">
+                    <img class="arrow-shop-white" src="./assets/images/header/arrow-white2.png" alt="seta para baixo">
+                </a>
+                <ul class="shop-submenu" id="shop-submenu">
+                    <li><a class="submenu-first" href="#">Casual</a></li>
+                    <li><a href="#">Formal</a></li>
+                    <li><a href="#">Party</a></li>
+                    <li><a href="#">Gym</a></li>
+                </ul>
             </li>
             <li class="nav-item li-sale"><a href="#" class="nav-link">On Sale</a></li>
             <li class="nav-item li-news"><a href="#" class="nav-link">New Arrivals</a></li>
             <li class="nav-item li-brands"><a href="#" class="nav-link">Brands</a></li>
-          </ul>
+        </ul>
 
           <div class="search">
             <a class="search-btn"><img class="img-search" src="./assets/images/header/search.svg" alt=""></a>
@@ -323,15 +326,16 @@
 
     <section id="newsletter-container">
       <h2 class="newsletter-title">STAY UPTO DATE ABOUT OUR LATEST OFFERS</h2>
-
+    
       <div class="newsletter-input-content">
         <div class="newsletter-input">
           <img class="email-img" src="./assets/images/newsletter/email-icon.svg" alt="">
-          <input class="email-input" type="text" placeholder="Enter your email address">
+          <input class="email-input" type="email" id="emailInput" placeholder="Enter your email address">
         </div>
         <div class="newsletter-subscribe">
-          <button class="subscribe-btn">Subscribe to Newsletter</button>
+          <button class="subscribe-btn" onclick="validateEmail()">Subscribe to Newsletter</button>
         </div>
+        <p id="error-message">Please enter a valid email address.</p>
       </div>
     </section>
   </main>
@@ -398,8 +402,7 @@
             <li>Youtube Playlist</li>
           </ul>
         </div>
-      </div>
-      
+      </div>      
       
       <div class="footer-copyright">
         <span class="divider-footer"></span>

@@ -5,29 +5,29 @@ function closeTopBar() {
   document.querySelector('header').classList.add('no-topbar');
 }
 
+// ---------------------------------------------------
 
-const shopMenuItem = document.querySelector('.li-shop > a');
-const submenu = document.querySelector('.shop-submenu');
+const shopLink = document.getElementById("shop-link");
+const submenu = document.getElementById("shop-submenu");
+const arrow = shopLink.querySelector(".arrow-shop");
 
-
-function toggleSubmenu(event) {
-  event.preventDefault();
-  
-  const parentLi = this.parentNode;
-
-  if (parentLi.classList.contains('menu-open')) {
-    parentLi.classList.remove('menu-open');
-    submenu.style.display = 'none';
-  } else {
-    document.querySelectorAll('.menu-open').forEach(function(item) {
-      item.classList.remove('menu-open');
-      item.querySelector('.shop-submenu').style.display = 'none';
-    });
-
-    parentLi.classList.add('menu-open');
-    submenu.style.display = 'block';
-  }
+function openMenu() {
+    submenu.classList.add("show-submenu");
+    arrow.classList.add("rotate-arrow");
 }
+
+function closeMenu() {
+    submenu.classList.remove("show-submenu");
+    arrow.classList.remove("rotate-arrow");
+}
+
+shopLink.addEventListener("mouseenter", openMenu);
+submenu.addEventListener("mouseenter", openMenu);
+shopLink.addEventListener("mouseleave", closeMenu);
+submenu.addEventListener("mouseleave", closeMenu);
+
+
+// ---------------------------------------------------
 
 const hamburger = document.querySelector('.hamburger');
 const menuList = document.querySelector('.menu-list');
@@ -116,3 +116,18 @@ nextBtn.addEventListener('click', () => {
 });
 
 updateCarousel();
+
+
+function validateEmail() {
+  const emailInput = document.getElementById("emailInput");
+  const errorMessage = document.getElementById("error-message");
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (emailRegex.test(emailInput.value)) {
+    errorMessage.style.display = "none";
+    alert("Subscribed successfully!");
+    emailInput.value = "";
+  } else {
+    errorMessage.style.display = "block";
+  }
+}

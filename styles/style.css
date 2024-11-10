@@ -1,4 +1,5 @@
-@import url('./header/nav_bar.css');
+@import url('./menu/top_bar.css');
+@import url('./menu/nav_bar.css');
 @import url('./header/banner.css');
 @import url('./header/brands.css');
 @import url('./main/products.css');

@@ -40,6 +40,11 @@ footer {
 
 .twitter, .facebook, .instagram, .github, .footer-section li {
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.social-media-icons img:hover {
+  transform: scale(1.1);
 }
 
 .footer-section h3 {
@@ -61,6 +66,10 @@ footer {
   font-size: 1.6rem;
   line-height: 1.9rem;
   color: hsla(0, 0%, 0%, 0.6);
+}
+
+.inner-ul li:hover {
+  font-weight: 600;
 }
 
 .footer-content {
