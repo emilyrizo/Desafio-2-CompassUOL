@@ -21,10 +21,23 @@ function closeMenu() {
     arrow.classList.remove("rotate-arrow");
 }
 
-shopLink.addEventListener("mouseenter", openMenu);
-submenu.addEventListener("mouseenter", openMenu);
-shopLink.addEventListener("mouseleave", closeMenu);
-submenu.addEventListener("mouseleave", closeMenu);
+const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+
+if (isTouchDevice) {
+    shopLink.addEventListener("click", (event) => {
+        event.preventDefault(); 
+        if (submenu.classList.contains("show-submenu")) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+} else {
+    shopLink.addEventListener("mouseenter", openMenu);
+    submenu.addEventListener("mouseenter", openMenu);
+    shopLink.addEventListener("mouseleave", closeMenu);
+    submenu.addEventListener("mouseleave", closeMenu);
+}
 
 
 // ---------------------------------------------------
@@ -72,50 +85,71 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-const carouselTrack = document.querySelector('.carousel-track');
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
-const carouselItems = Array.from(document.querySelectorAll('.carousel-item'));
+var container = document.getElementById('carousel-img-container');
+var slider = document.getElementById('slider');
+var slides = document.getElementsByClassName('slide').length;
+var buttons = document.getElementsByClassName('btn');
 
-let currentIndex = 0;
-const itemWidth = carouselItems[0].clientWidth;
+var currentPosition = 0;
+var currentMargin = 0;
+var slidesPerPage = 0;
+var slidesCount = slides - slidesPerPage;
+var containerWidth = container.offsetWidth;
 
-const updateCarousel = () => {
-  carouselTrack.style.transition = 'transform 0.5s ease';
-  carouselTrack.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-};
+window.addEventListener("resize", checkWidth);
 
-const shiftFirstToLast = () => {
-  carouselTrack.style.transition = 'none';
-  carouselTrack.appendChild(carouselTrack.firstElementChild);
-  currentIndex--;
-  carouselTrack.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-};
+function checkWidth() {
+	containerWidth = container.offsetWidth;
+	setParams(containerWidth);
+}
 
-const shiftLastToFirst = () => {
-  carouselTrack.style.transition = 'none';
-  carouselTrack.insertBefore(carouselTrack.lastElementChild, carouselTrack.firstElementChild);
-  currentIndex++;
-  carouselTrack.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-};
+function setParams(w) {
+	if (w <= 390) {
+		slidesPerPage = 1;
+	} else if (w < 768) {
+		slidesPerPage = 2;
+	} else if (w < 1024) {
+		slidesPerPage = 3;
+	} else {
+		slidesPerPage = 4;
+	}
 
-prevBtn.addEventListener('click', () => {
-  if (currentIndex === 0) {
-    shiftLastToFirst();
-  }
-  currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
-  updateCarousel();
-});
+	slidesCount = slides - slidesPerPage;
+	if (currentPosition > slidesCount) {
+		currentPosition = slidesCount;
+	}
 
-nextBtn.addEventListener('click', () => {
-  if (currentIndex === carouselItems.length - 1) {
-    shiftFirstToLast();
-  }
-  currentIndex = (currentIndex + 1) % carouselItems.length;
-  updateCarousel();
-});
+	currentMargin = -currentPosition * 378; 
+	slider.style.marginLeft = currentMargin + 'px';
 
-updateCarousel();
+	buttons[0].classList.toggle('inactive', currentPosition === 0);
+	buttons[1].classList.toggle('inactive', currentPosition >= slidesCount);
+}
+
+setParams(containerWidth);
+
+function slideRight() {
+	if (currentPosition > 0) {
+		currentPosition--;
+		currentMargin += 378; 
+		slider.style.marginLeft = currentMargin + 'px';
+	}
+
+	buttons[0].classList.toggle('inactive', currentPosition === 0);
+	buttons[1].classList.toggle('inactive', currentPosition < slidesCount);
+}
+
+function slideLeft() {
+	if (currentPosition < slidesCount) {
+		currentPosition++;
+		currentMargin -= 378; 
+		slider.style.marginLeft = currentMargin + 'px';
+	}
+
+	buttons[0].classList.toggle('inactive', currentPosition === 0);
+	buttons[1].classList.toggle('inactive', currentPosition >= slidesCount);
+}
+
 
 
 function validateEmail() {

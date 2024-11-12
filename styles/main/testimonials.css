@@ -25,11 +25,21 @@
 .prev-btn {
   margin-top: -6rem;
   right: 14rem;
+  transition: transform 0.2s ease;
 }
 
 .next-btn {
   margin-top: -6rem;
   right: 10rem;
+  transition: transform 0.2s ease;
+}
+
+.next-btn:active {
+  transform: translateX(2.5px);
+}
+
+.prev-btn:active {
+  transform: translateX(-2.5px); 
 }
 
 .carousel {
@@ -39,33 +49,33 @@
   margin-top: 4.4rem;
 }
 
-.carousel-track {
-  display: flex;
-  /* transition: transform 0.5s ease; */
-  justify-content: center;
+#slider-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 4.4rem;
 }
 
-.carousel-item {
+#slider-container #slider {
+	display: flex;
+	width: 1000%;
+	height: 100%;
+	transition: all .5s ease;
+}
+
+#slider .slide {
   margin: 0 1rem;
   padding: 28px 32px;
   border: 1px solid #ccc;
   border-radius: 2rem;
   box-sizing: border-box;
-  width: 400px;
-  height: 240px;
+  width: 40rem;
+  min-width: 35.8rem;
+  height: 24rem;
   position: relative;
+	/* display: grid; */
 }
 
-.carousel-item img {
-  width: 33.6rem;
-  height: auto;
-  display: block;
-}
-
-.carousel-item:nth-child(1),
-.carousel-item:nth-child(5) {
-  filter: blur(2px);
-}
 
 @media (max-width: 390px) {
   .carousel-title {
@@ -75,49 +85,40 @@
     margin-left: 1.6rem;
     margin-bottom: 0;
   }
-
-  .carousel-btn {
-    position: absolute;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
   
   .prev-btn {
-    margin-top: -7.7rem;
+    margin-top: -2.2rem;
     margin-right: 5rem;
+    right: 1rem;
   }
   
   .next-btn {
-    margin-top: -7.7rem;
+    margin-top: -2.2rem;
     margin-right: 0.7rem;
-  }
-  
-  .prev-btn, .next-btn {
-    top: 50%;
-    transform: translateY(-50%);
     right: 1rem;
   }
-
-  .carousel {
+  
+  .slider-container {
     position: relative;
     width: 100%;
     overflow: hidden;
     margin-top: 2.4rem;
   }
 
-  .carousel-item {
-    margin: 0 1rem;
-    padding: 2.4rem 2.4rem;
+  .slide {
+    padding: 2.4rem 2.4rem !important;
     border: 1px solid #ccc;
     border-radius: 2rem;
-    width: 35.8rem;
-    height: 18.62rem;
+    width: 35.8rem !important;
+    height: 18.62rem !important;
     position: relative;
   }
 
-  .carousel-item img {
-    width: 31rem;
-    height: 13.82rem;
+  .slide img {
+    width: 31rem !important;
+    height: 13.82rem !important;
   }
 }
+
+
+
